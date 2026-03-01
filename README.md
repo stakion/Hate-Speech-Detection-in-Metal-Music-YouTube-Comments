@@ -22,7 +22,8 @@ Metal music discussions in particular contain:
 - Sarcasm
 - Slang
 - Aggressive tone
-- Contextual irony <br>
+- Contextual irony
+
 This project evaluates whether Transformer-based models can distinguish between stylistic aggression and actual hate speech.
 
 
@@ -92,15 +93,6 @@ These works collectively show that hate speech detection is highly dependent on 
 - F1 Score
 - Training Loss
 - Validation Loss
-
-### Representation Metrics
-- Cosine Distance
-- Euclidean Distance
-- Perplexity
-
-### Information Retrieval Metrics
-- Mean Average Precision (MAP)
-- NDCG (Normalized Discounted Cumulative Gain)
 
 
 ## File Descriptions
