@@ -34,8 +34,7 @@ This project evaluates whether Transformer-based models can distinguish between 
 ---
 
 ## 3. Related Work
-This project builds upon recent advances in hate speech detection for social media platforms. 
-
+This project builds upon recent advances in hate speech detection for social media platforms. <br>
 Prior work such as *“Misogynistic Attitude Detection in YouTube Comments and Replies”* proposes high-quality annotated datasets and algorithmic models for toxic language classification in video platforms. 
 
 The study *“DweshVaani: An LLM for Detecting Religious Hate Speech in Code-Mixed Hindi-English”* demonstrates the effectiveness of large language models in handling multilingual and culturally nuanced hate speech. 
