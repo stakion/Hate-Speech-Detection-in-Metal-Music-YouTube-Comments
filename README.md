@@ -1,5 +1,8 @@
 # Hate Speech Detection in Metal Music YouTube Comments  
 
+<br>
+<br>
+
 ## Objectives:
 ### General:
 Analyze and compare the performance of Transformer-based models and Mamba-based architectures in detecting hate speech in YouTube comments across metal bands.
@@ -21,7 +24,8 @@ Metal music discussions in particular contain:
 
 This project evaluates whether Transformer-based models can distinguish between stylistic aggression and actual hate speech.
 
----
+<br>
+<br>
 
 ## 2. Research Questions
 - How does **BERT-base (uncased)** compare with **HateBERT (RoBERTa toxic-pretrained)**?
@@ -30,7 +34,8 @@ This project evaluates whether Transformer-based models can distinguish between 
 - Does longer training increase overfitting?
 - How well do trained models transfer to real YouTube comments?
 
----
+<br>
+<br>
 
 ## 3. Related Work
 This project builds upon recent advances in hate speech detection for social media platforms. <br>
@@ -39,7 +44,8 @@ The study *“DweshVaani: An LLM for Detecting Religious Hate Speech in Code-Mix
 Additionally, *“Detection of Homophobia and Transphobia in YouTube Comments”* highlights the importance of context-aware classification in identity-based hate detection. <br>
 These works collectively show that hate speech detection is highly dependent on dataset construction, linguistic diversity, and domain adaptation. Inspired by these findings, this project evaluates Transformer-based architectures (BERT, HateBERT) under controlled experimental conditions to analyze overfitting, dataset bias, and cross-domain generalization in metal music YouTube comments.
 
----
+<br>
+<br>
 
 ## 4. Datasets Used
 ### HateXplain: https://github.com/hate-alert/HateXplain
@@ -48,7 +54,8 @@ These works collectively show that hate speech detection is highly dependent on 
 ### ETHOS: https://github.com/intelligence-csd-auth-gr/Ethos-Hate-Speech-Dataset
 - Binary classification corpus constructed for this study
 
----
+<br>
+<br>
 
 ## 5. Pipeline Structure Steps
 1. Dataset normalization  
@@ -60,20 +67,22 @@ These works collectively show that hate speech detection is highly dependent on 
 7. Evaluation (Accuracy, F1, Loss curves)  
 8. Inference on real YouTube comments  
 
----
+<br>
+<br>
 
 ## 6. Experimental Analysis
 ### Experiment 1 – BERT (HateXplain, 10 Epochs)
 A BERT-base (uncased) model was trained using only the HateXplain dataset for 10 epochs. While training loss decreased steadily, validation loss increased after early epochs, indicating early overfitting. Although accuracy remained relatively stable (~83%), the F1 score fluctuated. <br>
 **Main Finding:** The model begins overfitting after 2–3 epochs, suggesting that longer training does not improve generalization.
 
----
+<br>
+<br>
 
 ### Experiment 2 – BERT (HateXplain, 30 Epochs)
 To confirm the overfitting behavior, training was extended to 30 epochs. Validation performance did not improve and instability increased across epochs. <br>
 **Main Finding:** Additional training time worsens generalization. Overfitting is confirmed and early stopping is necessary.
 
----
+<br>
 
 ### Experiment 3 – BERT (HateXplain, 100 Epochs, GPU Optimized)
 A long training run (100 epochs) was executed with GPU optimization to test whether extended convergence improves robustness, reaching 1 Epoch / min. Training loss approached zero, while validation loss remained high. <br>
