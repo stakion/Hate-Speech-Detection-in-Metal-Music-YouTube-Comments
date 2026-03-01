@@ -117,45 +117,50 @@ Fine-tuning was extended to 10 epochs to test performance stability. Results sho
 - Domain-adapted models require fine-tuning
 - Real-world YouTube comments demand multilingual expansion
 - False positive control is critical for production systems
-
----
+<br>
+<br>
 
 ## 8. Evaluation Metrics
-
 ### Classification Metrics
 - Accuracy
 - F1 Score
 - Training Loss
 - Validation Loss
+<br>
 
 ### Representation Metrics
 - Cosine Distance
 - Euclidean Distance
 - Perplexity
+<br>
 
 ### Information Retrieval Metrics
 - Mean Average Precision (MAP)
 - NDCG (Normalized Discounted Cumulative Gain)
-
----
+<br>
+<br>
 
 ## 9. File Descriptions
 ### PROYECT_05.pptx
 Project presentation summarizing the research motivation, problem statement, experimental design, dataset selection, evaluation metrics, and comparative results between BERT and HateBERT architectures. It documents the research questions, related work, and conclusions regarding overfitting and domain adaptation in hate speech detection for YouTube metal comments.
+<br>
 
 ### PROGRESS_02.ipynb
 Main experimentation notebook containing the full machine learning pipeline. It includes dataset preprocessing, binary corpus construction, tokenization, Transformer fine-tuning, training/validation loss tracking, evaluation metrics computation (Accuracy, F1-score), and inference over real YouTube comments. All experimental variants (BERT, HateBERT, multi-dataset training) are implemented and evaluated here.
+<br>
 
 ### Capture_comments_04.py
 Data acquisition script responsible for extracting YouTube comments using `yt_dlp`. It retrieves comment text and metadata (likes, author, timestamps), structures the information into pandas DataFrames, and exports CSV files for downstream preprocessing and model inference. This file enables real-world validation of trained models.
+<br>
 
 ### HATEXPLAIN_CLEAN_True_Final_01.csv
 Preprocessed version of the HateXplain dataset adapted into a binary classification format (hate vs non-hate). Includes normalized and filtered text data used for supervised training and evaluation of Transformer-based models.
+<br>
 
 ### Ethos_Dataset_Binary.csv
 Binary-labeled version of the ETHOS hate speech dataset. Used both independently and in combination with HateXplain to analyze dataset bias, cross-dataset generalization, and false positive behavior in hate speech detection models.
-
----
+<br>
+<br>
 
 ## 10. Reproducibility
 
