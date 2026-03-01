@@ -1,4 +1,10 @@
 # Hate Speech Detection in Metal Music YouTube Comments  
+## Abstract
+This project presents a controlled experimental study on hate speech detection in YouTube comments associated with metal music videos. The investigation evaluates Transformer-based architectures (BERT-base) and domain-adapted toxic language models (HateBERT) under multiple training configurations using the HateXplain and ETHOS datasets.
+
+A structured pipeline was implemented including dataset normalization, binary corpus construction, early stopping analysis, and cross-dataset training. Eight controlled experiments were conducted to analyze overfitting behavior, dataset bias, generalization stability, and false positive rates when transferring models to real-world YouTube comments collected via automated scraping.
+
+Results show that BERT exhibits rapid overfitting after 2–3 epochs, while domain-specific models require fine-tuning to reduce severe false positive behavior. The findings highlight the importance of early stopping, dataset diversity, and domain adaptation when deploying hate speech classifiers in culturally expressive online communities.
 
 <br>
 <br>
@@ -11,7 +17,7 @@ Analyze and compare the performance of Transformer-based models and Mamba-based 
 1. Train and evaluate Transformer-based and Mamba-based models on labeled datasets to detect hate speech in metal music video youtube comments.
 2. Test models on multiple labeled datasets and measure the variation in performance to assess dataset bias and generalization potential.
 <br>
-<br>
+
 
 ## 1. Research Motivation
 Online music communities frequently exhibit aggressive linguistic styles that may be misclassified by traditional hate speech detection systems. <br>
@@ -23,7 +29,7 @@ Metal music discussions in particular contain:
 
 This project evaluates whether Transformer-based models can distinguish between stylistic aggression and actual hate speech.
 <br>
-<br>
+
 
 ## 2. Research Questions
 - How does **BERT-base (uncased)** compare with **HateBERT (RoBERTa toxic-pretrained)**?
@@ -32,7 +38,7 @@ This project evaluates whether Transformer-based models can distinguish between 
 - Does longer training increase overfitting?
 - How well do trained models transfer to real YouTube comments?
 <br>
-<br>
+
 
 ## 3. Related Work
 This project builds upon recent advances in hate speech detection for social media platforms. <br>
@@ -45,7 +51,7 @@ Additionally, *“Detection of Homophobia and Transphobia in YouTube Comments”
 
 These works collectively show that hate speech detection is highly dependent on dataset construction, linguistic diversity, and domain adaptation. Inspired by these findings, this project evaluates Transformer-based architectures (BERT, HateBERT) under controlled experimental conditions to analyze overfitting, dataset bias, and cross-domain generalization in metal music YouTube comments.
 <br>
-<br>
+
 
 ## 4. Datasets Used
 ### HateXplain: https://github.com/hate-alert/HateXplain
@@ -54,7 +60,7 @@ These works collectively show that hate speech detection is highly dependent on 
 ### ETHOS: https://github.com/intelligence-csd-auth-gr/Ethos-Hate-Speech-Dataset
 - Binary classification corpus constructed for this study
 <br>
-<br>
+
 
 ## 5. Pipeline Structure Steps
 1. Dataset normalization  
@@ -66,7 +72,7 @@ These works collectively show that hate speech detection is highly dependent on 
 7. Evaluation (Accuracy, F1, Loss curves)  
 8. Inference on real YouTube comments  
 <br>
-<br>
+
 
 ## 6. Experimental Analysis
 ### Experiment 1 – BERT (HateXplain, 10 Epochs)
@@ -108,7 +114,7 @@ HateBERT was fine-tuned using HateXplain and ETHOS. False positives were drastic
 Fine-tuning was extended to 10 epochs to test performance stability. Results showed moderate improvement in detection but signs of slight overfitting reappeared. <br>
 **Main Finding:** Even domain-adapted models benefit from controlled early stopping. Optimal training duration remains short.
 <br>
-<br>
+
 
 ## 7. Key Findings
 - BERT overfits rapidly on HateXplain
@@ -118,7 +124,7 @@ Fine-tuning was extended to 10 epochs to test performance stability. Results sho
 - Real-world YouTube comments demand multilingual expansion
 - False positive control is critical for production systems
 <br>
-<br>
+
 
 ## 8. Evaluation Metrics
 ### Classification Metrics
@@ -138,7 +144,7 @@ Fine-tuning was extended to 10 epochs to test performance stability. Results sho
 - Mean Average Precision (MAP)
 - NDCG (Normalized Discounted Cumulative Gain)
 <br>
-<br>
+
 
 ## 9. File Descriptions
 ### PROYECT_05.pptx
@@ -160,10 +166,9 @@ Preprocessed version of the HateXplain dataset adapted into a binary classificat
 ### Ethos_Dataset_Binary.csv
 Binary-labeled version of the ETHOS hate speech dataset. Used both independently and in combination with HateXplain to analyze dataset bias, cross-dataset generalization, and false positive behavior in hate speech detection models.
 <br>
-<br>
+
 
 ## 10. Reproducibility
-
 ### Install Dependencies
 ```bash
 pip install transformers torch pandas yt-dlp numpy
