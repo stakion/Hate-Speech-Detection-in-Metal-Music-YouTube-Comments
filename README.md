@@ -16,7 +16,6 @@ Analyze and compare the performance of Transformer-based models and Mamba-based 
 2. Test models on multiple labeled datasets and measure the variation in performance to assess dataset bias and generalization potential.
 <br>
 
-
 ## 1. Research Motivation
 Online music communities frequently exhibit aggressive linguistic styles that may be misclassified by traditional hate speech detection systems. <br>
 Metal music discussions in particular contain:
@@ -28,7 +27,6 @@ Metal music discussions in particular contain:
 This project evaluates whether Transformer-based models can distinguish between stylistic aggression and actual hate speech.
 <br>
 
-
 ## 2. Research Questions
 - How does **BERT-base (uncased)** compare with **HateBERT (RoBERTa toxic-pretrained)**?
 - Does combining HateXplain and ETHOS improve generalization?
@@ -36,7 +34,6 @@ This project evaluates whether Transformer-based models can distinguish between 
 - Does longer training increase overfitting?
 - How well do trained models transfer to real YouTube comments?
 <br>
-
 
 ## 3. Related Work
 This project builds upon recent advances in hate speech detection for social media platforms. <br>
@@ -50,7 +47,6 @@ Additionally, *“Detection of Homophobia and Transphobia in YouTube Comments”
 These works collectively show that hate speech detection is highly dependent on dataset construction, linguistic diversity, and domain adaptation. Inspired by these findings, this project evaluates Transformer-based architectures (BERT, HateBERT) under controlled experimental conditions to analyze overfitting, dataset bias, and cross-domain generalization in metal music YouTube comments.
 <br>
 
-
 ## 4. Datasets Used
 ### HateXplain: https://github.com/hate-alert/HateXplain
 - Explainable hate speech dataset (2020)
@@ -58,7 +54,6 @@ These works collectively show that hate speech detection is highly dependent on 
 ### ETHOS: https://github.com/intelligence-csd-auth-gr/Ethos-Hate-Speech-Dataset
 - Binary classification corpus constructed for this study
 <br>
-
 
 ## 5. Pipeline Structure Steps
 1. Dataset normalization  
@@ -70,7 +65,6 @@ These works collectively show that hate speech detection is highly dependent on 
 7. Evaluation (Accuracy, F1, Loss curves)  
 8. Inference on real YouTube comments  
 <br>
-
 
 ## 6. Experimental Analysis
 ### Experiment 1 – BERT (HateXplain, 10 Epochs)
@@ -113,7 +107,6 @@ Fine-tuning was extended to 10 epochs to test performance stability. Results sho
 **Main Finding:** Even domain-adapted models benefit from controlled early stopping. Optimal training duration remains short.
 <br>
 
-
 ## 7. Key Findings
 - BERT overfits rapidly on HateXplain
 - Validation loss increases after early epochs
@@ -130,19 +123,16 @@ Fine-tuning was extended to 10 epochs to test performance stability. Results sho
 - F1 Score
 - Training Loss
 - Validation Loss
-<br>
 
 ### Representation Metrics
 - Cosine Distance
 - Euclidean Distance
 - Perplexity
-<br>
 
 ### Information Retrieval Metrics
 - Mean Average Precision (MAP)
 - NDCG (Normalized Discounted Cumulative Gain)
 <br>
-
 
 ## 9. File Descriptions
 ### PROYECT_05.pptx
@@ -164,7 +154,6 @@ Preprocessed version of the HateXplain dataset adapted into a binary classificat
 ### Ethos_Dataset_Binary.csv
 Binary-labeled version of the ETHOS hate speech dataset. Used both independently and in combination with HateXplain to analyze dataset bias, cross-dataset generalization, and false positive behavior in hate speech detection models.
 <br>
-
 
 ## 10. Reproducibility
 ### Install Dependencies
