@@ -8,7 +8,8 @@ Analyze and compare the performance of Transformer-based models and Mamba-based 
 1. Train and evaluate Transformer-based and Mamba-based models on labeled datasets to detect hate speech in metal music video youtube comments.
 2. Test models on multiple labeled datasets and measure the variation in performance to assess dataset bias and generalization potential.
 
-***
+<br>
+<br>
 
 ## 1. Research Motivation
 Online music communities frequently exhibit aggressive linguistic styles that may be misclassified by traditional hate speech detection systems. <br>
@@ -137,7 +138,7 @@ Fine-tuning was extended to 10 epochs to test performance stability. Results sho
 ---
 
 ## 9. File Descriptions
-<span style="color:green">PROYECT_05.pptx </span>
+### PROYECT_05.pptx
 Project presentation summarizing the research motivation, problem statement, experimental design, dataset selection, evaluation metrics, and comparative results between BERT and HateBERT architectures. It documents the research questions, related work, and conclusions regarding overfitting and domain adaptation in hate speech detection for YouTube metal comments.
 
 ### PROGRESS_02.ipynb
