@@ -14,7 +14,7 @@ Analyze and compare the performance of Transformer-based models and Mamba-based 
 ### Specific:
 1. Train and evaluate Transformer-based and Mamba-based models on labeled datasets to detect hate speech in metal music video youtube comments.
 2. Test models on multiple labeled datasets and measure the variation in performance to assess dataset bias and generalization potential.
-<br>
+
 
 ## 1. Research Motivation
 Online music communities frequently exhibit aggressive linguistic styles that may be misclassified by traditional hate speech detection systems. <br>
@@ -22,10 +22,9 @@ Metal music discussions in particular contain:
 - Sarcasm
 - Slang
 - Aggressive tone
-- Contextual irony
-
+- Contextual irony <br>
 This project evaluates whether Transformer-based models can distinguish between stylistic aggression and actual hate speech.
-<br>
+
 
 ## 2. Research Questions
 - How does **BERT-base (uncased)** compare with **HateBERT (RoBERTa toxic-pretrained)**?
@@ -33,19 +32,18 @@ This project evaluates whether Transformer-based models can distinguish between 
 - How does dataset selection impact false positives?
 - Does longer training increase overfitting?
 - How well do trained models transfer to real YouTube comments?
-<br>
+
 
 ## 3. Related Work
-This project builds upon recent advances in hate speech detection for social media platforms. <br>
+This project builds upon recent advances in hate speech detection for social media platforms. 
 
-Prior work such as *“Misogynistic Attitude Detection in YouTube Comments and Replies”* proposes high-quality annotated datasets and algorithmic models for toxic language classification in video platforms. <br>
+Prior work such as *“Misogynistic Attitude Detection in YouTube Comments and Replies”* proposes high-quality annotated datasets and algorithmic models for toxic language classification in video platforms. 
 
-The study *“DweshVaani: An LLM for Detecting Religious Hate Speech in Code-Mixed Hindi-English”* demonstrates the effectiveness of large language models in handling multilingual and culturally nuanced hate speech. <br>
+The study *“DweshVaani: An LLM for Detecting Religious Hate Speech in Code-Mixed Hindi-English”* demonstrates the effectiveness of large language models in handling multilingual and culturally nuanced hate speech.
 
-Additionally, *“Detection of Homophobia and Transphobia in YouTube Comments”* highlights the importance of context-aware classification in identity-based hate detection. <br>
+Additionally, *“Detection of Homophobia and Transphobia in YouTube Comments”* highlights the importance of context-aware classification in identity-based hate detection. 
 
 These works collectively show that hate speech detection is highly dependent on dataset construction, linguistic diversity, and domain adaptation. Inspired by these findings, this project evaluates Transformer-based architectures (BERT, HateBERT) under controlled experimental conditions to analyze overfitting, dataset bias, and cross-domain generalization in metal music YouTube comments.
-<br>
 
 ## 4. Datasets Used
 ### HateXplain: https://github.com/hate-alert/HateXplain
@@ -53,7 +51,7 @@ These works collectively show that hate speech detection is highly dependent on 
 
 ### ETHOS: https://github.com/intelligence-csd-auth-gr/Ethos-Hate-Speech-Dataset
 - Binary classification corpus constructed for this study
-<br>
+
 
 ## 5. Pipeline Structure Steps
 1. Dataset normalization  
