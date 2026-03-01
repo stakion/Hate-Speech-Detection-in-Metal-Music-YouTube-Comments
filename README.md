@@ -61,10 +61,10 @@ These works collectively show that hate speech detection is highly dependent on 
 3. Tokenization  
 4. Binary corpus construction  
 5. Transformer fine-tuning
-6. GPU Optimizations through a RTX 4090.
+6. GPU Optimizations through a RTX 4090
 7. Evaluation (Accuracy, F1, Loss curves)  
-8. Inference on real YouTube comments  
-<br>
+8. Inference on real YouTube comments
+
 
 ## 6. Experimental Analysis
 ### Experiment 1 – BERT (HateXplain, 10 Epochs)
