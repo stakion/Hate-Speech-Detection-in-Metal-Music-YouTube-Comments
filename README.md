@@ -8,7 +8,9 @@ This project investigates hate speech detection in YouTube comments associated w
 
 The objective is to analyze generalization performance, dataset bias, overfitting behavior, and domain adaptation impact when detecting hate speech in culturally dense online communities.
 
+
 ---
+
 
 ## 1. Research Motivation
 
@@ -25,7 +27,6 @@ This project evaluates whether Transformer-based models can distinguish between 
 ---
 
 ## 2. Research Questions
-
 - How does **BERT-base (uncased)** compare with **HateBERT (RoBERTa toxic-pretrained)**?
 - Does combining HateXplain and ETHOS improve generalization?
 - How does dataset selection impact false positives?
@@ -34,9 +35,7 @@ This project evaluates whether Transformer-based models can distinguish between 
 
 ---
 
-### 3. Related Work
-
-## Related Work
+## 3. Related Work
 This project builds upon recent advances in hate speech detection for social media platforms. 
 
 Prior work such as *“Misogynistic Attitude Detection in YouTube Comments and Replies”* proposes high-quality annotated datasets and algorithmic models for toxic language classification in video platforms. 
@@ -50,7 +49,6 @@ These works collectively show that hate speech detection is highly dependent on 
 ---
 
 ## 4. Datasets Used
-
 ### HateXplain: https://github.com/hate-alert/HateXplain
 - Explainable hate speech dataset (2020)
 
@@ -71,7 +69,7 @@ These works collectively show that hate speech detection is highly dependent on 
 
 ---
 
-## 6. Model Variants Evaluated
+## 6. Experimental Analysis
 ### Experiment 1 – BERT (HateXplain, 10 Epochs)
 A BERT-base (uncased) model was trained using only the HateXplain dataset for 10 epochs. While training loss decreased steadily, validation loss increased after early epochs, indicating early overfitting. Although accuracy remained relatively stable (~83%), the F1 score fluctuated.
 
@@ -128,8 +126,6 @@ Fine-tuning was extended to 10 epochs to test performance stability. Results sho
 
 ---
 
----
-
 ## 7. Key Findings
 - BERT overfits rapidly on HateXplain
 - Validation loss increases after early epochs
@@ -137,6 +133,7 @@ Fine-tuning was extended to 10 epochs to test performance stability. Results sho
 - Domain-adapted models require fine-tuning
 - Real-world YouTube comments demand multilingual expansion
 - False positive control is critical for production systems
+
 
 ---
 
