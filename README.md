@@ -10,8 +10,6 @@ Analyze and compare the performance of Transformer-based models and Mamba-based 
 ### Specific:
 1. Train and evaluate Transformer-based and Mamba-based models on labeled datasets to detect hate speech in metal music video youtube comments.
 2. Test models on multiple labeled datasets and measure the variation in performance to assess dataset bias and generalization potential.
-
-<br>
 <br>
 
 ## 1. Research Motivation
@@ -23,8 +21,6 @@ Metal music discussions in particular contain:
 - Contextual irony
 
 This project evaluates whether Transformer-based models can distinguish between stylistic aggression and actual hate speech.
-
-<br>
 <br>
 
 ## 2. Research Questions
@@ -33,18 +29,18 @@ This project evaluates whether Transformer-based models can distinguish between 
 - How does dataset selection impact false positives?
 - Does longer training increase overfitting?
 - How well do trained models transfer to real YouTube comments?
-
-<br>
 <br>
 
 ## 3. Related Work
 This project builds upon recent advances in hate speech detection for social media platforms. <br>
-Prior work such as *“Misogynistic Attitude Detection in YouTube Comments and Replies”* proposes high-quality annotated datasets and algorithmic models for toxic language classification in video platforms. <br>
-The study *“DweshVaani: An LLM for Detecting Religious Hate Speech in Code-Mixed Hindi-English”* demonstrates the effectiveness of large language models in handling multilingual and culturally nuanced hate speech. <br>
-Additionally, *“Detection of Homophobia and Transphobia in YouTube Comments”* highlights the importance of context-aware classification in identity-based hate detection. <br>
-These works collectively show that hate speech detection is highly dependent on dataset construction, linguistic diversity, and domain adaptation. Inspired by these findings, this project evaluates Transformer-based architectures (BERT, HateBERT) under controlled experimental conditions to analyze overfitting, dataset bias, and cross-domain generalization in metal music YouTube comments.
 
-<br>
+Prior work such as *“Misogynistic Attitude Detection in YouTube Comments and Replies”* proposes high-quality annotated datasets and algorithmic models for toxic language classification in video platforms. <br>
+
+The study *“DweshVaani: An LLM for Detecting Religious Hate Speech in Code-Mixed Hindi-English”* demonstrates the effectiveness of large language models in handling multilingual and culturally nuanced hate speech. <br>
+
+Additionally, *“Detection of Homophobia and Transphobia in YouTube Comments”* highlights the importance of context-aware classification in identity-based hate detection. <br>
+
+These works collectively show that hate speech detection is highly dependent on dataset construction, linguistic diversity, and domain adaptation. Inspired by these findings, this project evaluates Transformer-based architectures (BERT, HateBERT) under controlled experimental conditions to analyze overfitting, dataset bias, and cross-domain generalization in metal music YouTube comments.
 <br>
 
 ## 4. Datasets Used
@@ -53,8 +49,6 @@ These works collectively show that hate speech detection is highly dependent on 
 
 ### ETHOS: https://github.com/intelligence-csd-auth-gr/Ethos-Hate-Speech-Dataset
 - Binary classification corpus constructed for this study
-
-<br>
 <br>
 
 ## 5. Pipeline Structure Steps
@@ -66,35 +60,28 @@ These works collectively show that hate speech detection is highly dependent on 
 6. GPU Optimizations through a RTX 4090.
 7. Evaluation (Accuracy, F1, Loss curves)  
 8. Inference on real YouTube comments  
-
-<br>
 <br>
 
 ## 6. Experimental Analysis
 ### Experiment 1 – BERT (HateXplain, 10 Epochs)
 A BERT-base (uncased) model was trained using only the HateXplain dataset for 10 epochs. While training loss decreased steadily, validation loss increased after early epochs, indicating early overfitting. Although accuracy remained relatively stable (~83%), the F1 score fluctuated. <br>
 **Main Finding:** The model begins overfitting after 2–3 epochs, suggesting that longer training does not improve generalization.
-
-<br>
 <br>
 
 ### Experiment 2 – BERT (HateXplain, 30 Epochs)
 To confirm the overfitting behavior, training was extended to 30 epochs. Validation performance did not improve and instability increased across epochs. <br>
 **Main Finding:** Additional training time worsens generalization. Overfitting is confirmed and early stopping is necessary.
-
 <br>
 
 ### Experiment 3 – BERT (HateXplain, 100 Epochs, GPU Optimized)
 A long training run (100 epochs) was executed with GPU optimization to test whether extended convergence improves robustness, reaching 1 Epoch / min. Training loss approached zero, while validation loss remained high. <br>
 **Main Finding:** Severe overfitting occurs. The model memorizes training data without improving real-world performance.
-
----
+<br>
 
 ### Experiment 4 – BERT (HateXplain, 2 Epochs)
 Based on previous findings, training was reduced to 2 epochs. Validation loss stabilized and F1-score improved compared to longer runs. <br>
 **Main Finding:** Early stopping significantly improves generalization. Optimal performance occurs within the first 2 epochs.
-
----
+<br>
 
 ### Experiment 5 – BERT (HateXplain + ETHOS, 2 Epochs)
 Datasets were combined to increase diversity and reduce dataset bias. The model was trained for 2 epochs. <br>
