@@ -137,7 +137,7 @@ Fine-tuning was extended to 10 epochs to test performance stability. Results sho
 ---
 
 ## 9. File Descriptions
-<span style="color:green">### PROYECT_05.pptx </span>
+<span style="color:green">PROYECT_05.pptx </span>
 Project presentation summarizing the research motivation, problem statement, experimental design, dataset selection, evaluation metrics, and comparative results between BERT and HateBERT architectures. It documents the research questions, related work, and conclusions regarding overfitting and domain adaptation in hate speech detection for YouTube metal comments.
 
 ### PROGRESS_02.ipynb
