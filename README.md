@@ -11,9 +11,7 @@ Analyze and compare the performance of Transformer-based models and Mamba-based 
 ***
 
 ## 1. Research Motivation
-
-Online music communities frequently exhibit aggressive linguistic styles that may be misclassified by traditional hate speech detection systems.
-
+Online music communities frequently exhibit aggressive linguistic styles that may be misclassified by traditional hate speech detection systems. <br>
 Metal music discussions in particular contain:
 - Sarcasm
 - Slang
@@ -35,12 +33,9 @@ This project evaluates whether Transformer-based models can distinguish between 
 
 ## 3. Related Work
 This project builds upon recent advances in hate speech detection for social media platforms. <br>
-Prior work such as *“Misogynistic Attitude Detection in YouTube Comments and Replies”* proposes high-quality annotated datasets and algorithmic models for toxic language classification in video platforms. 
-
-The study *“DweshVaani: An LLM for Detecting Religious Hate Speech in Code-Mixed Hindi-English”* demonstrates the effectiveness of large language models in handling multilingual and culturally nuanced hate speech. 
-
-Additionally, *“Detection of Homophobia and Transphobia in YouTube Comments”* highlights the importance of context-aware classification in identity-based hate detection. 
-
+Prior work such as *“Misogynistic Attitude Detection in YouTube Comments and Replies”* proposes high-quality annotated datasets and algorithmic models for toxic language classification in video platforms. <br>
+The study *“DweshVaani: An LLM for Detecting Religious Hate Speech in Code-Mixed Hindi-English”* demonstrates the effectiveness of large language models in handling multilingual and culturally nuanced hate speech. <br>
+Additionally, *“Detection of Homophobia and Transphobia in YouTube Comments”* highlights the importance of context-aware classification in identity-based hate detection. <br>
 These works collectively show that hate speech detection is highly dependent on dataset construction, linguistic diversity, and domain adaptation. Inspired by these findings, this project evaluates Transformer-based architectures (BERT, HateBERT) under controlled experimental conditions to analyze overfitting, dataset bias, and cross-domain generalization in metal music YouTube comments.
 
 ---
@@ -68,54 +63,46 @@ These works collectively show that hate speech detection is highly dependent on 
 
 ## 6. Experimental Analysis
 ### Experiment 1 – BERT (HateXplain, 10 Epochs)
-A BERT-base (uncased) model was trained using only the HateXplain dataset for 10 epochs. While training loss decreased steadily, validation loss increased after early epochs, indicating early overfitting. Although accuracy remained relatively stable (~83%), the F1 score fluctuated.
-
+A BERT-base (uncased) model was trained using only the HateXplain dataset for 10 epochs. While training loss decreased steadily, validation loss increased after early epochs, indicating early overfitting. Although accuracy remained relatively stable (~83%), the F1 score fluctuated. <br>
 **Main Finding:** The model begins overfitting after 2–3 epochs, suggesting that longer training does not improve generalization.
 
 ---
 
 ### Experiment 2 – BERT (HateXplain, 30 Epochs)
-To confirm the overfitting behavior, training was extended to 30 epochs. Validation performance did not improve and instability increased across epochs.
-
+To confirm the overfitting behavior, training was extended to 30 epochs. Validation performance did not improve and instability increased across epochs. <br>
 **Main Finding:** Additional training time worsens generalization. Overfitting is confirmed and early stopping is necessary.
 
 ---
 
 ### Experiment 3 – BERT (HateXplain, 100 Epochs, GPU Optimized)
-A long training run (100 epochs) was executed with GPU optimization to test whether extended convergence improves robustness, reaching 1 Epoch / min. Training loss approached zero, while validation loss remained high.
-
+A long training run (100 epochs) was executed with GPU optimization to test whether extended convergence improves robustness, reaching 1 Epoch / min. Training loss approached zero, while validation loss remained high. <br>
 **Main Finding:** Severe overfitting occurs. The model memorizes training data without improving real-world performance.
 
 ---
 
 ### Experiment 4 – BERT (HateXplain, 2 Epochs)
-Based on previous findings, training was reduced to 2 epochs. Validation loss stabilized and F1-score improved compared to longer runs.
-
+Based on previous findings, training was reduced to 2 epochs. Validation loss stabilized and F1-score improved compared to longer runs. <br>
 **Main Finding:** Early stopping significantly improves generalization. Optimal performance occurs within the first 2 epochs.
 
 ---
 
 ### Experiment 5 – BERT (HateXplain + ETHOS, 2 Epochs)
-Datasets were combined to increase diversity and reduce dataset bias. The model was trained for 2 epochs.
-
+Datasets were combined to increase diversity and reduce dataset bias. The model was trained for 2 epochs. <br>
 **Main Finding:** Dataset combination slightly improves robustness and reduces overfitting effects, but domain transfer limitations persist.
 
 ---
 
 ### Experiment 6 – HateBERT (No Fine-Tuning)
-HateBERT (RoBERTa variant pre-trained on toxic Reddit comments) was tested without fine-tuning. The model massively over-predicted hate speech in YouTube comments.
-
+HateBERT (RoBERTa variant pre-trained on toxic Reddit comments) was tested without fine-tuning. The model massively over-predicted hate speech in YouTube comments. <br>
 **Main Finding:** Domain mismatch causes extreme false positives. Pretrained toxic models do not generalize automatically to music-related discourse.
 
 
 ### Experiment 7 – HateBERT (Fine-Tuned, 2 Epochs)
-HateBERT was fine-tuned using HateXplain and ETHOS. False positives were drastically reduced compared to the non-fine-tuned version.
-
+HateBERT was fine-tuned using HateXplain and ETHOS. False positives were drastically reduced compared to the non-fine-tuned version. <br>
 **Main Finding:** Domain adaptation via fine-tuning is essential for reducing misclassification in culturally specific contexts. <br>
 
 ### Experiment 8 – HateBERT (Fine-Tuned, 10 Epochs)
-Fine-tuning was extended to 10 epochs to test performance stability. Results showed moderate improvement in detection but signs of slight overfitting reappeared.
-
+Fine-tuning was extended to 10 epochs to test performance stability. Results showed moderate improvement in detection but signs of slight overfitting reappeared. <br>
 **Main Finding:** Even domain-adapted models benefit from controlled early stopping. Optimal training duration remains short.
 
 ---
@@ -127,7 +114,6 @@ Fine-tuning was extended to 10 epochs to test performance stability. Results sho
 - Domain-adapted models require fine-tuning
 - Real-world YouTube comments demand multilingual expansion
 - False positive control is critical for production systems
-
 
 ---
 
@@ -151,7 +137,7 @@ Fine-tuning was extended to 10 epochs to test performance stability. Results sho
 ---
 
 ## 9. File Descriptions
-### PROYECT_05.pptx
+<span style="color:green">### PROYECT_05.pptx </span>
 Project presentation summarizing the research motivation, problem statement, experimental design, dataset selection, evaluation metrics, and comparative results between BERT and HateBERT architectures. It documents the research questions, related work, and conclusions regarding overfitting and domain adaptation in hate speech detection for YouTube metal comments.
 
 ### PROGRESS_02.ipynb
