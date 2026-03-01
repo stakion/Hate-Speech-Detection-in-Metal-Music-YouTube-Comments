@@ -108,14 +108,12 @@ HateBERT (RoBERTa variant pre-trained on toxic Reddit comments) was tested witho
 
 **Main Finding:** Domain mismatch causes extreme false positives. Pretrained toxic models do not generalize automatically to music-related discourse.
 
----
 
 ### Experiment 7 – HateBERT (Fine-Tuned, 2 Epochs)
 HateBERT was fine-tuned using HateXplain and ETHOS. False positives were drastically reduced compared to the non-fine-tuned version.
 
 **Main Finding:** Domain adaptation via fine-tuning is essential for reducing misclassification in culturally specific contexts.
 
----
 
 ### Experiment 8 – HateBERT (Fine-Tuned, 10 Epochs)
 Fine-tuning was extended to 10 epochs to test performance stability. Results showed moderate improvement in detection but signs of slight overfitting reappeared.
