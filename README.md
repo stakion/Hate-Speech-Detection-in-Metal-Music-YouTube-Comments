@@ -64,30 +64,69 @@ These works collectively show that hate speech detection is highly dependent on 
 2. English-language filtering  
 3. Tokenization  
 4. Binary corpus construction  
-5. Transformer fine-tuning  
-6. Evaluation (Accuracy, F1, Loss curves)  
-7. Inference on real YouTube comments  
+5. Transformer fine-tuning
+6. GPU Optimizations through a RTX 4090.
+7. Evaluation (Accuracy, F1, Loss curves)  
+8. Inference on real YouTube comments  
 
 ---
 
 ## 6. Model Variants Evaluated
-### Experiments 1–4
-- BERT-base (uncased)
-- HateXplain only
-- 2–100 epochs
-- Overfitting observed after 2–3 epochs
+### Experiment 1 – BERT (HateXplain, 10 Epochs)
+A BERT-base (uncased) model was trained using only the HateXplain dataset for 10 epochs. While training loss decreased steadily, validation loss increased after early epochs, indicating early overfitting. Although accuracy remained relatively stable (~83%), the F1 score fluctuated.
 
-### Experiment 5
-- HateXplain + ETHOS combined
+**Main Finding:** The model begins overfitting after 2–3 epochs, suggesting that longer training does not improve generalization.
 
-### Experiment 6
-- HateBERT without fine-tuning
-- Severe over-prediction of hate speech (high false positives)
+---
 
-### Experiments 7–8
-- HateBERT fine-tuned on combined datasets
-- Significant reduction in false positives
-- Improved domain adaptation
+### Experiment 2 – BERT (HateXplain, 30 Epochs)
+To confirm the overfitting behavior, training was extended to 30 epochs. Validation performance did not improve and instability increased across epochs.
+
+**Main Finding:** Additional training time worsens generalization. Overfitting is confirmed and early stopping is necessary.
+
+---
+
+### Experiment 3 – BERT (HateXplain, 100 Epochs, GPU Optimized)
+A long training run (100 epochs) was executed with GPU optimization to test whether extended convergence improves robustness, reaching 1 Epoch / min. Training loss approached zero, while validation loss remained high.
+
+**Main Finding:** Severe overfitting occurs. The model memorizes training data without improving real-world performance.
+
+---
+
+### Experiment 4 – BERT (HateXplain, 2 Epochs)
+Based on previous findings, training was reduced to 2 epochs. Validation loss stabilized and F1-score improved compared to longer runs.
+
+**Main Finding:** Early stopping significantly improves generalization. Optimal performance occurs within the first 2 epochs.
+
+---
+
+### Experiment 5 – BERT (HateXplain + ETHOS, 2 Epochs)
+Datasets were combined to increase diversity and reduce dataset bias. The model was trained for 2 epochs.
+
+**Main Finding:** Dataset combination slightly improves robustness and reduces overfitting effects, but domain transfer limitations persist.
+
+---
+
+### Experiment 6 – HateBERT (No Fine-Tuning)
+HateBERT (RoBERTa variant pre-trained on toxic Reddit comments) was tested without fine-tuning. The model massively over-predicted hate speech in YouTube comments.
+
+**Main Finding:** Domain mismatch causes extreme false positives. Pretrained toxic models do not generalize automatically to music-related discourse.
+
+---
+
+### Experiment 7 – HateBERT (Fine-Tuned, 2 Epochs)
+HateBERT was fine-tuned using HateXplain and ETHOS. False positives were drastically reduced compared to the non-fine-tuned version.
+
+**Main Finding:** Domain adaptation via fine-tuning is essential for reducing misclassification in culturally specific contexts.
+
+---
+
+### Experiment 8 – HateBERT (Fine-Tuned, 10 Epochs)
+Fine-tuning was extended to 10 epochs to test performance stability. Results showed moderate improvement in detection but signs of slight overfitting reappeared.
+
+**Main Finding:** Even domain-adapted models benefit from controlled early stopping. Optimal training duration remains short.
+
+---
 
 ---
 
