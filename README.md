@@ -5,8 +5,6 @@ This project presents a controlled experimental study on hate speech detection i
 A structured pipeline was implemented including dataset normalization, binary corpus construction, early stopping analysis, and cross-dataset training. Eight controlled experiments were conducted to analyze overfitting behavior, dataset bias, generalization stability, and false positive rates when transferring models to real-world YouTube comments collected via automated scraping.
 
 Results show that BERT exhibits rapid overfitting after 2–3 epochs, while domain-specific models require fine-tuning to reduce severe false positive behavior. The findings highlight the importance of early stopping, dataset diversity, and domain adaptation when deploying hate speech classifiers in culturally expressive online communities.
-
-<br>
 <br>
 
 ## Objectives:
