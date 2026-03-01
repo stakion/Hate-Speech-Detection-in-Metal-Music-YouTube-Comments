@@ -1,7 +1,4 @@
 # Hate Speech Detection in Metal Music YouTube Comments  
-### Transformer vs Domain-Specific Toxic Language Models
-
-<hr style="height:10px;">
 
 ## Objectives:
 ### General:
