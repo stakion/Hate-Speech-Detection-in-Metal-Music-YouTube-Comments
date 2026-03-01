@@ -1,12 +1,15 @@
 # Hate Speech Detection in Metal Music YouTube Comments  
 ### Transformer vs Domain-Specific Toxic Language Models
 
-***
+<hr style="height:10px;">
 
-## Abstract
-This project investigates hate speech detection in YouTube comments associated with metal music videos. It compares general-purpose Transformer architectures (BERT Base) against domain-adapted toxic language models (HateBERT) using benchmark datasets (HateXplain, ETHOS) and real-world scraped YouTube comments.
+## Objectives:
+### General:
+Analyze and compare the performance of Transformer-based models and Mamba-based architectures in detecting hate speech in YouTube comments across metal bands.
 
-The objective is to analyze generalization performance, dataset bias, overfitting behavior, and domain adaptation impact when detecting hate speech in culturally dense online communities.
+### Specific:
+1. Train and evaluate Transformer-based and Mamba-based models on labeled datasets to detect hate speech in metal music video youtube comments.
+2. Test models on multiple labeled datasets and measure the variation in performance to assess dataset bias and generalization potential.
 
 ***
 
