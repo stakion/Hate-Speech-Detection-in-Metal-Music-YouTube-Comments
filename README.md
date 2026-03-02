@@ -65,6 +65,16 @@ These works collectively show that hate speech detection is highly dependent on 
 8. Inference on real YouTube comments
 
 
+## YouTube English Comments Per Musical Video
+| Music Video                         | English Comments  |
+|-------------------------------------|-------------------|
+| Black Sabbath – War Pigs            | 29068             |
+| Hallowed Be Thy Name (Remaster)     | 1793              |
+| Master of Puppets (Remastered)      | 10149             |
+| Pantera – Cowboys From Hell         | 10724             |
+| Slayer – Raining Blood              | 17852             |
+
+
 ## Experimental Summary Table
 | Exp | Model      | Data Used               | Epochs | Core Observation                          | Main Conclusion |
 |-----|------------|------------------------|--------|--------------------------------------------|-----------------|
@@ -76,15 +86,6 @@ These works collectively show that hate speech detection is highly dependent on 
 | 6   | HateBERT   | None (Pretrained only) | —      | Massive over-prediction on YouTube         | Domain mismatch → extreme false positives |
 | 7   | HateBERT   | HateXplain + ETHOS     | 2      | False positives drastically reduced        | Fine-tuning essential for adaptation |
 | 8   | HateBERT   | HateXplain + ETHOS     | 10     | Slight improvement, mild overfitting signs | Controlled early stopping still required |
-
-
-## YouTube English Comments Per Musical Video
-| Music Video                         | English Comments  |
-| Black Sabbath – War Pigs            | 29068             |
-| Hallowed Be Thy Name (Remaster)     | 1793              |
-| Master of Puppets (Remastered)      | 10149             |
-| Pantera – Cowboys From Hell         | 10724             |
-| Slayer – Raining Blood              | 17852             |
 
 
 ## Hate Speech Detections per Experiment (YouTube Inference)
