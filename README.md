@@ -78,49 +78,23 @@ These works collectively show that hate speech detection is highly dependent on 
 | 8   | HateBERT   | HateXplain + ETHOS     | 10     | Slight improvement, mild overfitting signs | Controlled early stopping still required |
 
 
-## YouTube Inference Results per Experiment
-| Exp | Music Video                         | English Comments | Hate Speech Comments |
-|-----|-------------------------------------|------------------|----------------------|
-| 1   | Black Sabbath – War Pigs            | 29068            | 337                  |
-| 1   | Hallowed Be Thy Name (Remaster)     | 1793             | 9                    |
-| 1   | Master of Puppets (Remastered)      | 10149            | 32                   |
-| 1   | Pantera – Cowboys From Hell         | 10724            | 81                   |
-| 1   | Slayer – Raining Blood              | 17852            | 182                  |
-| 2   | Black Sabbath – War Pigs            | 29068            | 154                  |
-| 2   | Hallowed Be Thy Name (Remaster)     | 1793             | 7                    |
-| 2   | Master of Puppets (Remastered)      | 10149            | 14                   |
-| 2   | Pantera – Cowboys From Hell         | 10724            | 45                   |
-| 2   | Slayer – Raining Blood              | 17852            | 94                   |
-| 3   | Black Sabbath – War Pigs            | 29068            | 225                  |
-| 3   | Hallowed Be Thy Name (Remaster)     | 1793             | 6                    |
-| 3   | Master of Puppets (Remastered)      | 10149            | 20                   |
-| 3   | Pantera – Cowboys From Hell         | 10724            | 52                   |
-| 3   | Slayer – Raining Blood              | 17852            | 144                  |
-| 4   | Black Sabbath – War Pigs            | 29068            | 170                  |
-| 4   | Hallowed Be Thy Name (Remaster)     | 1793             | 0                    |
-| 4   | Master of Puppets (Remastered)      | 10149            | 10                   |
-| 4   | Pantera – Cowboys From Hell         | 10724            | 32                   |
-| 4   | Slayer – Raining Blood              | 17852            | 78                   |
-| 5   | Black Sabbath – War Pigs            | 29068            | 207                  |
-| 5   | Hallowed Be Thy Name (Remaster)     | 1793             | 3                    |
-| 5   | Master of Puppets (Remastered)      | 10149            | 9                    |
-| 5   | Pantera – Cowboys From Hell         | 10724            | 30                   |
-| 5   | Slayer – Raining Blood              | 17852            | 61                   |
-| 6   | Black Sabbath – War Pigs            | 29068            | 3388                 |
-| 6   | Hallowed Be Thy Name (Remaster)     | 1793             | 265                  |
-| 6   | Master of Puppets (Remastered)      | 10149            | 1664                 |
-| 6   | Pantera – Cowboys From Hell         | 10724            | 1686                 |
-| 6   | Slayer – Raining Blood              | 17852            | 2424                 |
-| 7   | Black Sabbath – War Pigs            | 29068            | 209                  |
-| 7   | Hallowed Be Thy Name (Remaster)     | 1793             | 1                    |
-| 7   | Master of Puppets (Remastered)      | 10149            | 3                    |
-| 7   | Pantera – Cowboys From Hell         | 10724            | 31                   |
-| 7   | Slayer – Raining Blood              | 17852            | 70                   |
-| 8   | Black Sabbath – War Pigs            | 29068            | 229                  |
-| 8   | Hallowed Be Thy Name (Remaster)     | 1793             | 3                    |
-| 8   | Master of Puppets (Remastered)      | 10149            | 7                    |
-| 8   | Pantera – Cowboys From Hell         | 10724            | 39                   |
-| 8   | Slayer – Raining Blood              | 17852            | 111                  |
+## YouTube English Comments Per Musical Video
+| Music Video                         | English Comments  |
+| Black Sabbath – War Pigs            | 29068             |
+| Hallowed Be Thy Name (Remaster)     | 1793              |
+| Master of Puppets (Remastered)      | 10149             |
+| Pantera – Cowboys From Hell         | 10724             |
+| Slayer – Raining Blood              | 17852             |
+
+
+## Hate Speech Detections per Experiment (YouTube Inference)
+| Music Video                         | Exp 1 | Exp 2 | Exp 3 | Exp 4 | Exp 5 | Exp 6 | Exp 7 | Exp 8 |
+|-------------------------------------|-------|-------|-------|-------|-------|-------|-------|-------|
+| Black Sabbath – War Pigs            | 337   | 154   | 225   | 170   | 207   | 3388  | 209   | 229   |
+| Hallowed Be Thy Name (Remaster)     | 9     | 7     | 6     | 0     | 3     | 265   | 1     | 3     |
+| Master of Puppets (Remastered)      | 32    | 14    | 20    | 10    | 9     | 1664  | 3     | 7     |
+| Pantera – Cowboys From Hell         | 81    | 45    | 52    | 32    | 30    | 1686  | 31    | 39    |
+| Slayer – Raining Blood              | 182   | 94    | 144   | 78    | 61    | 2424  | 70    | 111   |
 
 
 ## Key Findings
