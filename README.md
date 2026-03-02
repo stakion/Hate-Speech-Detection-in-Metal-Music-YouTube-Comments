@@ -115,8 +115,14 @@ These works collectively show that hate speech detection is highly dependent on 
 | Capture_comments_04.py             | Data acquisition script responsible for extracting YouTube comments using `yt_dlp`. It retrieves comment text and metadata (likes, author, timestamps), structures the information into pandas DataFrames, and exports CSV files for downstream preprocessing and model inference. This file enables real-world validation of trained models. |
 | HATEXPLAIN_CLEAN_True_Final_01.csv | Preprocessed version of the HateXplain dataset adapted into a binary classification format (hate vs non-hate). Includes normalized and filtered text data used for supervised training and evaluation of Transformer-based models. |
 | Ethos_Dataset_Binary.csv           | Binary-labeled version of the ETHOS hate speech dataset. Used both independently and in combination with HateXplain to analyze dataset bias, cross-dataset generalization, and false positive behavior in hate speech detection models. |
-
-
+| Experimental_Tags/Hate_Speech_001  | Labeling of comments using BERT trained on HateXplain (10 epochs) |
+| Experimental_Tags/Hate_Speech_002  | Labeling of comments using BERT trained on HateXplain (30 epochs) |
+| Experimental_Tags/Hate_Speech_003  | Labeling of comments using BERT trained on HateXplain (100 epochs) |
+| Experimental_Tags/Hate_Speech_004  | Labeling of comments using BERT trained on HateXplain (2 epochs) |
+| Experimental_Tags/Hate_Speech_005  | Labeling using BERT trained on HateXplain + ETHOS |
+| Experimental_Tags/Hate_Speech_006  | Labeling using pretrained HateBERT (no fine-tuning) |
+| Experimental_Tags/Hate_Speech_007  | Labeling using fine-tuned HateBERT (2 epochs) |
+| Experimental_Tags/Hate_Speech_008  | Labeling using fine-tuned HateBERT (10 epochs) |
 
 ## Reproducibility
 ### Install Dependencies
@@ -134,3 +140,17 @@ jupyter notebook PROGRESS_02.ipynb
 python Capture_comments_04.py
 ```
 
+## Future Work
+Several research directions emerge from this investigation.
+
+First, the implementation of State Space Models such as Mamba should be revisited. Although preliminary attempts were made, training instability and convergence issues prevented reliable evaluation. Future work should focus on architectural adaptation, hyperparameter tuning, and longer sequence optimization to properly assess whether Mamba-based models provide advantages over Transformer architectures in hate speech detection tasks.
+
+Second, multilingual expansion is necessary. The current pipeline restricts analysis to English-language comments, limiting generalization in real YouTube environments. Future work should include automatic translation, multilingual tokenizers, or multilingual pre-trained models to evaluate cross-lingual robustness.
+
+Third, false positive rate analysis should be quantified more rigorously. While qualitative observations revealed severe over-prediction in non-fine-tuned HateBERT, a systematic statistical comparison across experiments (e.g., precision-recall trade-offs, confusion matrices, ROC curves) would provide stronger deployment-oriented insights.
+
+Fourth, dataset bias and cross-domain generalization require deeper investigation. Controlled experiments across multiple music genres (e.g., rap, pop, electronic) could reveal whether aggressive linguistic styles uniquely impact hate speech classifiers in metal communities.
+
+Finally, semi-supervised or agent-assisted labeling approaches could be explored. Large language models may be used to generate pseudo-labels for unlabeled YouTube comments, enabling expanded domain adaptation while maintaining supervised control.
+
+These directions aim to improve robustness, reduce false positives, and enhance the applicability of hate speech detection systems in culturally expressive online communities.
